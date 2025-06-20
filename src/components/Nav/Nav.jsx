@@ -10,7 +10,7 @@ function Nav() {
             className="navbar-toggler"
             type="button"
             data-bs-toggle="collapse"
-            data-bs-targer="#navbarNav"
+            data-bs-target="#navbarNav"
             aria-controls="navbarNav"
             aria-expanded="false"
             aria-label="Toggle navigation"
@@ -24,6 +24,7 @@ function Nav() {
               LUMINA SKIN
             </h2>
           </a>
+
           {/* Mobile Icon */}
           <ul className="d-lg-none d-flex align-items-center gap-3">
             <li className="nav-item">
@@ -60,45 +61,33 @@ function Nav() {
             id="navbarNav"
           >
             {/* Left Navbar */}
-            <ul className="navbar-nav nav-menu align-items-center gap-4">
-              <li className="nav-item">
-                <a href="#" className="nav-link">
-                  Home
-                </a>
-              </li>
-              <li className="nav-item">
-                <a href="#" className="nav-link">
-                  About
-                </a>
-              </li>
-              <li className="nav-item">
-                <a href="#" className="nav-link">
-                  Shop
-                </a>
-              </li>
-              <li className="nav-item">
-                <a href="#" className="nav-link">
-                  Store
-                </a>
-              </li>
-              <li className="nav-item">
-                <a href="#" className="nav-link">
-                  Blog
-                </a>
-              </li>
-              <li className="nav-item">
-                <a href="#" className="nav-link">
-                  Contact
-                </a>
-              </li>
-            </ul>
-
-            {/* Brand Logo */}
             <a href="#" className="navbar-brand order-0 d-none d-lg-flex">
               <h2 className="m-0 fw-bold" style={{ letterSpacing: "2px" }}>
                 LUMINA SKIN
               </h2>
             </a>
+
+            {/* Navbar */}
+            <ul className="navbar-nav nav-menu align-items-center gap-4">
+              <li className="nav-item">
+                <a href="#" className="nav-link">Home</a>
+              </li>
+              <li className="nav-item">
+                <a href="#" className="nav-link">About</a>
+              </li>
+              <li className="nav-item">
+                <a href="#" className="nav-link">Shop</a>
+              </li>
+              <li className="nav-item">
+                <a href="#" className="nav-link">Store</a>
+              </li>
+              <li className="nav-item">
+                <a href="#" className="nav-link">Blog</a>
+              </li>
+              <li className="nav-item">
+                <a href="#" className="nav-link">Contact</a>
+              </li>
+            </ul>
 
             {/* Right Navbar */}
             <ul className="navbar-nav d-none d-lg-flex align-items-center gap-4">
@@ -108,28 +97,20 @@ function Nav() {
                 </a>
               </li>
               <li className="nav-item">
-                <a
-                  href="#"
-                  data-bs-toggle="modal"
-                  data-bs-target="#signupModal"
-                >
+                <a href="#" data-bs-toggle="modal" data-bs-target="#signupModal">
                   <i className="bi bi-person fs-5 text-dark"></i>
                 </a>
               </li>
               <li className="nav-item position-relative">
                 <a href="#">
                   <i className="bi bi-heart fs-5 text-dark"></i>
-                  <span className="position-absolute top-0 start-100 translate-middle cart-qount rounded-pill">
-                    0
-                  </span>
+                  <span className="position-absolute top-0 start-100 translate-middle cart-qount rounded-pill">0</span>
                 </a>
               </li>
               <li className="nav-item position-relative">
                 <a href="#">
                   <i className="bi bi-bag fs-5 text-dark"></i>
-                  <span className="position-absolute top-0 start-100 translate-middle cart-qount rounded-pill">
-                    0
-                  </span>
+                  <span className="position-absolute top-0 start-100 translate-middle cart-qount rounded-pill">0</span>
                 </a>
               </li>
             </ul>
@@ -171,8 +152,6 @@ function Nav() {
           </div>
         </div>
       </div>
-
-      
     </>
   );
 }

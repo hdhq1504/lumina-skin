@@ -96,3 +96,27 @@ html, body {
     background-color: var(--primary-color) !important;
     color: var(--white-color) !important;
 }
+
+/* Hero Section */
+.hero {
+    margin-top: 80px;
+}
+
+.hero-wrap {
+    height: 90vh;
+    background-image: url(assets\hero-bg-1.webp);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    animation: Anim-zoomout var(--transition-regular) forwards linear;
+}
+
+.hero-wrap2 {
+    background-image: url(assets\hero-bg-2.webp) !important;
+}
+
+.hero-wrap3 {
+    background-image: url(assets\hero-bg-3.webp) !important;
+}
