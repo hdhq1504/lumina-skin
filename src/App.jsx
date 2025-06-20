@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Nav from "./components/Nav/Nav";
 import Index from "./components/Pages/Index";
 import ProductDetails from "./components/Pages/ProductDetails";
+import WishList from "./components/Pages/WishList";
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Index />}></Route>
         <Route path="/product/:id" element={<ProductDetails />}></Route>
+        <Route path="/wishlist" element={<WishList />}></Route>
       </Routes>
     </>
   );

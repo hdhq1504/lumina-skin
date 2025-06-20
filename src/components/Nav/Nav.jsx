@@ -1,7 +1,42 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 function Nav() {
+  const [cartCount, setCartCount] = useState();
+  const [wishlistCount, setWishlistCount] = useState(); 
+
+  const updateCounts = () => {
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+
+    const totalCartItems = cart.reduce((acc, item) => acc + (item.quantity || 1), 0);
+    setCartCount(totalCartItems);
+    setWishlistCount(wishlist.length);
+  };
+
+  useEffect(() => {
+    updateCounts();
+
+    const handleCartUpdate = () => updateCounts();
+    const handleWishlistUpdate = () => updateCounts();
+
+    window.addEventListener('cartUpdated', handleCartUpdate);
+    window.addEventListener('wishlistUpdated', handleWishlistUpdate);
+
+    const onStorageChange = (e) => {
+      if (e.key === 'cart' || e.key === 'wishlist') {
+        updateCounts();
+      }
+    };
+    window.addEventListener('storage', onStorageChange);
+
+    return () => {
+      window.removeEventListener('cartUpdated', handleCartUpdate);
+      window.removeEventListener('wishlistUpdated', handleWishlistUpdate);
+      window.removeEventListener('storage', onStorageChange);
+    };
+  }, []);
+
   return (
     <>
       {/* Navbar */}
