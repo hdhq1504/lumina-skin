@@ -270,3 +270,131 @@ html, body {
     font-size: 1rem;
     font-weight: 700;
 }
+
+/* Custom CSS */
+.section-banner {
+    background-color: #F5F5F5;
+    color: var(--text-color);
+    width: 100%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 80px;
+}
+
+.section-banner li a {
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+.section-banner li.active::after {
+    content: '';
+    position: absolute;
+    height: 1px;
+    width: 30px;
+    left: 8px;
+    top: 50%;
+    background-color: var(--black-color);
+}
+
+.section-banner li.active a {
+    color: var(--black-color) !important;
+}
+
+.btn-custom2 {
+    background-color: var(--black-color);
+    height: 55px;
+    color: var(--white-color);
+    font-size: 1.1rem;
+    transition: var(--transition-regular);
+}
+
+.btn-custom2:hover {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+}
+
+.quantity-box {
+    background-color: #F5F5F5 !important;
+    height: 55px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.quantity-box input {
+    border: none;
+    background-color: transparent;
+    font-size: 1.3rem;
+}
+
+.quantity .btn-custom {
+    border: 2px solid #EEEEE0;
+    background-color: transparent;
+    border-radius: none;
+    height: 55px;
+    color: var(--black-color);
+    font-size: 1.3rem;
+    transition: var(--transition-slow);
+}
+
+.quantity .btn-custom:hover {
+    background-color: var(--black-color);
+    border: 1px solid transparent;
+    color: var(--white-color);
+}
+
+.btn-count {
+    background-color: transparent;
+    border: none;
+    font-size: 1.5rem;
+}
+
+.nav-tabs .tab {
+    color: #6C757D;
+}
+
+.tab::before,
+.tab::after {
+    display: none !important;
+}
+
+.benefits-list li {
+    position: relative;
+    padding-left: 1.5rem;
+    list-style: none;
+}
+
+.benefits-list li::before {
+    content: '';
+    position: absolute;
+    top: 0.6em;
+    left: 0;
+    width: 5px;
+    height: 5px;
+    background-color: var(--text-color);
+    border-radius: 50%;
+}
+
+.img-thumbnail {
+    width: 60px;
+    height: 80px;
+    min-height: 80px;
+    min-width: 80px;
+}
+
+/* Product Details MQ Section */
+@media (max-width: 767px) {
+    .thumbnail-images {
+        flex-direction: row !important;
+    }
+
+    .img-thumbnail {
+        margin-top: 20px;
+        margin-bottom: 20px;
+        min-height: 150px;
+        min-width: 150px;
+        width: 150px;
+        height: 150px;
+    }
+}

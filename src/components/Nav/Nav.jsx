@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function Nav() {
   return (
@@ -19,11 +20,9 @@ function Nav() {
           </button>
 
           {/* Mobile Logo */}
-          <a href="#" className="navbar-brand mx-auto order-0 d-lg-none d-flex">
-            <h2 className="m-0 fw-bold" style={{ letterSpacing: "2px" }}>
-              LUMINA SKIN
-            </h2>
-          </a>
+          <Link to='/' className="navbar-brand mx-auto order-0 d-lg-none d-flex">
+            <h2 className="m-0 fw-bold" style={{ letterSpacing: "2px" }}>LUMINA SKIN</h2>
+          </Link>
 
           {/* Mobile Icon */}
           <ul className="d-lg-none d-flex align-items-center gap-3">
@@ -61,31 +60,31 @@ function Nav() {
             id="navbarNav"
           >
             {/* Left Navbar */}
-            <a href="#" className="navbar-brand order-0 d-none d-lg-flex">
+            <Link to='/' className="navbar-brand order-0 d-none d-lg-flex">
               <h2 className="m-0 fw-bold" style={{ letterSpacing: "2px" }}>
                 LUMINA SKIN
               </h2>
-            </a>
+            </Link>
 
             {/* Navbar */}
             <ul className="navbar-nav nav-menu align-items-center gap-4">
               <li className="nav-item">
-                <a href="#" className="nav-link">Home</a>
+                <Link to='/' className="nav-link">Home</Link>
               </li>
               <li className="nav-item">
-                <a href="#" className="nav-link">About</a>
+                <Link to='/' className="nav-link">About</Link>
               </li>
               <li className="nav-item">
-                <a href="#" className="nav-link">Shop</a>
+                <Link to='/' className="nav-link">Shop</Link>
               </li>
               <li className="nav-item">
-                <a href="#" className="nav-link">Store</a>
+                <Link to='/' className="nav-link">Store</Link>
               </li>
               <li className="nav-item">
-                <a href="#" className="nav-link">Blog</a>
+                <Link to='/' className="nav-link">Blog</Link>
               </li>
               <li className="nav-item">
-                <a href="#" className="nav-link">Contact</a>
+                <Link to='/' className="nav-link">Contact</Link>
               </li>
             </ul>
 
