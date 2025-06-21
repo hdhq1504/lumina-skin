@@ -29,8 +29,7 @@ function ProductDetails() {
       <ol className="section-banner py-3 position-relative">
         <li className="position-relative"><Link to="/">Home</Link></li>
         <li className="position-relative active"><a href="#" className="ps-5">Beauty & Cosmetics</a></li>
-        <li className="position-relative active"><a href="#" className="ps-5">{product.productName}</a>
-        </li>
+        <li className="position-relative active"><a href="#" className="ps-5">{product.productName}</a></li>
       </ol>
 
       <div className="container py-5">

@@ -12,7 +12,7 @@ function Index() {
   const [filterSortOption, setFilterSortOption] = useState('all');
   const navigate = useNavigate();
   
-  const addToWishList = (product) => {
+  const addToWishlist = (product) => {
     const existing = JSON.parse(localStorage.getItem('wishlist')) || [];
     if (!existing.some(p => p.id === product.id)) {
       const updated = [...existing, product];
@@ -114,7 +114,7 @@ function Index() {
               }}
               className="mt-4 swiper position-relative"
             >
-              {Product.filter((product) => product.id >= 5 && product.id <= 10).map((product) => (
+              {Product.filter(product => product.id >= 5 && product.id <= 10).map(product => (
                 <SwiperSlide key={product.id}>
                   <div className="product-item text-center position-relative">
                     <div className="product-image w-100 position-relative overflow-hidden">
@@ -122,7 +122,7 @@ function Index() {
                       <img src={product.secondImage} className="img-fluid" alt="" />
                       
                       <div className="product-icons gap-3">
-                        <div className="product-icon" title="Add to Wishlist" onClick={() => addToWishList(product)}>
+                        <div className="product-icon" title="Add to Wishlist" onClick={() => addToWishlist(product)}>
                           <i className="bi bi-heart fs-5"></i>
                         </div>
                         
@@ -138,7 +138,7 @@ function Index() {
                     <Link to={`/product/${product.id}`} className="text-decoration-none text-black">
                       <div className="product-content pt-3">
                         <span className="price text-decoration-none">{product.price}</span>
-                        <h3 className="title pt-3">{product.productName}</h3>
+                        <h3 className="title pt-1">{product.productName}</h3>
                       </div>
                     </Link>
                   </div>
@@ -148,6 +148,18 @@ function Index() {
           </div>
         </div>
       </div>
+
+      <ToastContainer 
+        position='top-right'
+        autoClose={2000}
+        hideProgressBar={false}
+        newestOnTop={false}      
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+      />
     </>
   );
 }
