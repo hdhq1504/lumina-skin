@@ -7,8 +7,23 @@ import { Link, useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 import Product from "./../../Product.json";
-import subBanner1 from "./../../assets/banner-1.webp"
-import subBanner2 from "./../../assets/banner-2.webp"
+import subBanner1 from "./../../assets/banner-1.webp";
+import subBanner2 from "./../../assets/banner-2.webp";
+import serviceImg1 from "./../../assets/service-icon-1.svg";
+import serviceImg2 from "./../../assets/service-icon-2.svg";
+import serviceImg3 from "./../../assets/service-icon-3.svg";
+import serviceImg4 from "./../../assets/service-icon-4.svg";
+import brand1 from "./../../assets/brand-1.png";
+import brand2 from "./../../assets/brand-2.png";
+import brand3 from "./../../assets/brand-3.png";
+import femaleBanner from "./../../assets/banner-female.webp";
+import discover1 from "./../../assets/discover-1.webp";
+import discover2 from "./../../assets/discover-2.webp";
+import socialImage1 from "./../../assets/social-image-1.jpg";
+import socialImage2 from "./../../assets/social-image-2.jpg";
+import socialImage3 from "./../../assets/social-image-3.jpg";
+import socialImage4 from "./../../assets/social-image-4.jpg";
+import socialImage5 from "./../../assets/social-image-5.jpg";
 
 function Index() {
   const [filterSortOption, setFilterSortOption] = useState('all');
@@ -174,6 +189,185 @@ function Index() {
             </div>
           </div>
         </div>
+
+        {/* Service */}
+        <div className="container py-5 my-5">
+          <div className="row text-center">
+            <div className="col-lg-3 col-sm-6 mb-4">
+              <img src={serviceImg1} alt="" className="img-fluid" />
+              <h4 className="mt-3 mb-1">Free Shipping</h4>
+              <p className="text-muted fs-6 fw-semibold">Free Shipping for orders over $130</p>
+            </div>
+            <div className="col-lg-3 col-sm-6 mb-4">
+              <img src={serviceImg2} alt="" className="img-fluid" />
+              <h4 className="mt-3 mb-1">Returns</h4>
+              <p className="text-muted fs-6 fw-semibold">Within 30 days for an exchange</p>
+            </div>
+            <div className="col-lg-3 col-sm-6 mb-4">
+              <img src={serviceImg3} alt="" className="img-fluid" />
+              <h4 className="mt-3 mb-1">Online Support</h4>
+              <p className="text-muted fs-6 fw-semibold">24 hours a day, 7 days a week</p>
+            </div>
+            <div className="col-lg-3 col-sm-6 mb-4">
+              <img src={serviceImg4} alt="" className="img-fluid" />
+              <h4 className="mt-3 mb-1">Flexible Payment</h4>
+              <p className="text-muted fs-6 fw-semibold">Pay with multiple credit cards</p>
+            </div>
+          </div>
+        </div>
+
+        {/* Seen In */}
+        <div className="text-center my-5 seen-in">
+          <div className="container">
+            <h1 className="mb-5 fw-semibold">As seen in</h1>
+            <div className="row pt-3 justify-content-center">
+              <div className="col-md-4 mb-4 seen-card">
+                <img src={brand1} alt="" className="img-fluid" />
+                <p className="text-dark fs-5 mt-2 fw-semibold">"Also the customer service is phenomenal. I would purchase again."</p>
+              </div>
+              <div className="col-md-4 mb-4 seen-card">
+                <img src={brand2} alt="" className="img-fluid" />
+                <p className="text-dark fs-5 mt-2 fw-semibold">"Great product line. Very attentive staff to deal with."</p>
+              </div>
+              <div className="col-md-4 mb-4 seen-card">
+                <img src={brand3} alt="" className="img-fluid" />
+                <p className="text-dark fs-5 mt-2 fw-semibold">"Are you looking to your beauty at an affordable price? Look no further"</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Favourite Beauty */}
+        <div className="favourite-beauty py-5 my-5">
+          <div className="container">
+            <div className="row">
+              <div className="section-title mb-5 favourite-beauty-title text-center">
+                <h2 className="fw-semibold fs-1">Customer favourite beauty essentials</h2>
+                <p>Made using clean, non-toxic ingredients, our products are designed for everyone.</p>
+              </div>
+            </div>
+
+            <div className="row">
+              <div className="col-lg-5">
+                <div className="favourite-beauty-banner mb-lg-0 mb-5 position-relative">
+                  <img src={femaleBanner} className="img-fluid" alt="" />
+                  <div className="favourite-beauty-banner-title ">
+                    <h3 className="fs-2">Empower Yourself</h3>
+                    <p className="fs-6">Get the skin you want to feel</p>
+                    <button className="btn btn-default">Explore More</button>
+                  </div>
+                </div>
+              </div>
+
+              <div className="col-lg-7">
+                <div className="row">
+                  {Product
+                    .filter(product => product.id >= 10 && product.id <= 15)
+                    .map(product => (
+                      <div className="col-md-4 mb-0">
+                        <div key={product.id}>
+                          <div className="product-item mb-5 text-center position-relative">
+                            <div className="product-image w-100 position-relative overflow-hidden">
+                              <img src={product.image} alt="product" className="img-fluid" />
+                              <img src={product.secondImage} alt="product" className="img-fluid" />
+                              <div className="product-icons gap-3">
+                                <div className="product-icon" title="Add to Wishlist" onClick={() => addToWishlist(product)}>
+                                  <i className="bi bi-heart fs-5"></i>
+                                </div>
+                                <div className="product-icon" title="Add to Cart" onClick={() => addToCart(product)}>
+                                  <i className="bi bi-cart3 fs-5"></i>
+                                </div>
+                              </div>
+                              <span className={`tag badge text-white ${product.tag === 'New' ? 'bg-danger' : 'bg-success'}`}>
+                                {product.tag}
+                              </span>
+                            </div>
+
+                            <Link to={`/product/${product.id}`} className="text-decoration-none text-black">
+                              <div className="product-content pt-3">
+                                <span className="price">{product.price}</span>
+                                <h3 className="title pt-1">{product.productName}</h3>
+                              </div>
+                            </Link>
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="discover container py-5">
+          <div className="section-title mb-5 favourite-beauty-title text-center">
+            <h2 className="fw-semibold fs-1">More to Discover</h2>
+            <p className="text-center">Our bundles were designed to conveniently package <br /> your tanning essentials while saving your money</p>
+          </div>
+          <div className="row g-5">
+            <div className="col-md-6 discover-card text-center">
+              <div className="discover-img section-image rounded">
+                <img src={discover1} alt="Summer Collection" className="img-fluid rounded" />
+              </div>
+              <div className="discover-info mt-3">
+                <div>Summer Collection</div>
+                <button className="btn mt-2">Shop Now <i className="bi bi-arrow-right ms-2"></i></button>
+              </div>
+            </div>
+            <div className="col-md-6 discover-card text-center">
+              <div className="discover-img section-image rounded">
+                <img src={discover2} alt="From Our Blog" className="img-fluid rounded" />
+              </div>
+              <div className="discover-info mt-3">
+                <div>Summer Collection</div>
+                <button className="btn mt-2">Read More <i className="bi bi-arrow-right ms-2"></i></button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Social Image */}
+        <div className="social-image-container py-5 px-5 mx-auto">
+          <div className="row g-4">
+            <div className="col-lg-2 col-md-4">
+              <div className="social-wrapper position-relative overflow-hidden">
+                <img src={socialImage1} alt="" className="img-fluid" />
+                <i className="bi bi-instagram"></i>
+              </div>
+            </div>
+            <div className="col-lg-2 col-md-4">
+              <div className="social-wrapper position-relative overflow-hidden">
+                <img src={socialImage2} alt="" className="img-fluid" />
+                <i className="bi bi-instagram"></i>
+              </div>
+            </div>
+            <div className="col-lg-2 col-md-4">
+              <div className="social-wrapper position-relative overflow-hidden">
+                <img src={socialImage3} alt="" className="img-fluid" />
+                <i className="bi bi-instagram"></i>
+              </div>
+            </div>
+            <div className="col-lg-2 col-md-4">
+              <div className="social-wrapper position-relative overflow-hidden">
+                <img src={socialImage4} alt="" className="img-fluid" />
+                <i className="bi bi-instagram"></i>
+              </div>
+            </div>
+            <div className="col-lg-2 col-md-4">
+              <div className="social-wrapper position-relative overflow-hidden">
+                <img src={socialImage5} alt="" className="img-fluid" />
+                <i className="bi bi-instagram"></i>
+              </div>
+            </div>
+            <div className="col-lg-2 col-md-4">
+              <div className="social-wrapper position-relative overflow-hidden">
+                <img src={socialImage1} alt="" className="img-fluid" />
+                <i className="bi bi-instagram"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+
       </div>
 
       <ToastContainer 
