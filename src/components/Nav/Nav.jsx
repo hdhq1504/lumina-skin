@@ -106,16 +106,16 @@ function Nav() {
                 <Link to='/about' className="nav-link">About</Link>
               </li>
               <li className="nav-item">
-                <Link to='/' className="nav-link">Shop</Link>
+                <Link to='/shop' className="nav-link">Shop</Link>
               </li>
               <li className="nav-item">
-                <Link to='/' className="nav-link">Store</Link>
+                <Link to='/stores' className="nav-link">Store</Link>
               </li>
               <li className="nav-item">
-                <Link to='/' className="nav-link">Blog</Link>
+                <Link to='/blog' className="nav-link">Blog</Link>
               </li>
               <li className="nav-item">
-                <Link to='/' className="nav-link">Contact</Link>
+                <Link to='/contact' className="nav-link">Contact</Link>
               </li>
             </ul>
 

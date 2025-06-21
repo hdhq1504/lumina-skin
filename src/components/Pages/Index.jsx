@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, EffectFade, Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/effect-fade";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 import Product from "./../../Product.json";
@@ -26,9 +26,6 @@ import socialImage4 from "./../../assets/social-image-4.jpg";
 import socialImage5 from "./../../assets/social-image-5.jpg";
 
 function Index() {
-  const [filterSortOption, setFilterSortOption] = useState('all');
-  const navigate = useNavigate();
-  
   const addToWishlist = (product) => {
     const existing = JSON.parse(localStorage.getItem('wishlist')) || [];
     if (!existing.some(p => p.id === product.id)) {
@@ -374,7 +371,7 @@ function Index() {
         position='top-right'
         autoClose={2000}
         hideProgressBar={false}
-        newestOnTop={false}      
+        newestOnTop={false}
         closeOnClick
         rtl={false}
         pauseOnFocusLoss

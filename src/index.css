@@ -312,7 +312,7 @@ body {
 .section-banner li.active::after {
   content: "";
   position: absolute;
-  height: 1px;
+  height: 1%;
   width: 30px;
   left: 8px;
   top: 50%;
@@ -320,6 +320,10 @@ body {
 }
 
 .section-banner li.active a {
+  color: var(--black-color) !important;
+}
+
+.section-banner li.active span {
   color: var(--black-color) !important;
 }
 
@@ -795,3 +799,6 @@ body {
     font-size: 14px;
     color: gray;
 }
+
+
+/* Shop Page */
