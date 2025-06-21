@@ -5,6 +5,7 @@ import Index from "./components/Pages/Index";
 import ProductDetails from "./components/Pages/ProductDetails";
 import Wishlist from "./components/Pages/Wishlist";
 import Cart from "./components/Pages/Cart";
+import Checkout from "./components/Pages/Checkout";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path="/product/:id" element={<ProductDetails />}></Route>
         <Route path="/wishlist" element={<Wishlist />}></Route>
         <Route path="/cart" element={<Cart />}></Route>
+        <Route path="/checkout" element={<Checkout />}></Route>
       </Routes>
     </>
   );

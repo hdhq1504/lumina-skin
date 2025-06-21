@@ -3,10 +3,12 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, EffectFade, Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/effect-fade";
-import Product from "./../../Product.json";
 import { Link, useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
+import Product from "./../../Product.json";
+import subBanner1 from "./../../assets/banner-1.webp"
+import subBanner2 from "./../../assets/banner-2.webp"
 
 function Index() {
   const [filterSortOption, setFilterSortOption] = useState('all');
@@ -145,6 +147,31 @@ function Index() {
                 </SwiperSlide>
               ))}
             </Swiper>
+          </div>
+        </div>
+
+        {/* Banners */}
+        <div className="banner py-5">
+          <div className="container">
+            <div className="row">
+              <div className="col-lg-6 banner-card overflow-hidden position-relative">
+                <img src={subBanner1} alt="" className="img-fluid rounded banner-img" />
+                <div className="banner-content position-absolute">
+                  <h3>NEW COLLECTION</h3>
+                  <h1>Intensive Glow C+ <br /> Serum<br /></h1>
+                  <button className="btn banner-btn mt-2">EXPLORE MORE</button>
+                </div>
+              </div>
+
+              <div className="col-lg-6 banner-card overflow-hidden position-relative banner-mt">
+                <img src={subBanner2} alt="" className="img-fluid rounded banner-img" />
+                <div className="banner-content banner-content2 position-absolute">
+                  <h1>25% Off Everything</h1>
+                  <p>Makeup with extended range in <br /> colors for every human.</p>
+                  <button className="btn banner-btn mt-2">SHOP NOW</button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
