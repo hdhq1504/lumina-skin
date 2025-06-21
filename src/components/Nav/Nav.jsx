@@ -103,7 +103,7 @@ function Nav() {
                 <Link to='/' className="nav-link">Home</Link>
               </li>
               <li className="nav-item">
-                <Link to='/' className="nav-link">About</Link>
+                <Link to='/about' className="nav-link">About</Link>
               </li>
               <li className="nav-item">
                 <Link to='/' className="nav-link">Shop</Link>
